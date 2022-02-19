@@ -1,0 +1,302 @@
+// Name: Jason Veno
+// Course: CS-260 Data Structures and Algorithms
+// Project One
+
+Struct Course { // Defines course structure, one course per line of course data file
+	String courseNumber
+	String courseName
+	FOR (courseName + 1 to end of line) { // Puts all prerequisites in Course struct
+		String prerequisites 
+	}
+}
+
+Class Vector { // Defines vector structure
+	Private:
+		Struct Node {
+			Course course
+		}
+		void StoreInVector(courses)
+		void PrintCourseInfo(courses, matchCourseNumber)
+	Public:
+		void ReadFile(course, file)
+		void Quicksort(courses, lowIndex, highIndex)	
+		Void PrintVectorCourse(vector<Course> courses, matchCourseNumber)
+		Void PrintVectorCourses(courses)	
+}
+
+Class HashTable { // Defines hash table structure
+	Private:
+		Struct Node {
+			Course course // Each line of file (each node)
+			Int key // Object used to map nodes/indexes in hash table
+			Node *next // What comes after each node (Ex. Last->next = null)	
+}	
+
+Void hashInsert(course)
+		Void StoreInHashTable(hashTable, course)
+		Void PrintHashCourse(hashTable, key)
+		Void PrintHashCourses(hashTable)
+
+	Public: 
+		void ReadFile(course, file)
+		void Quicksort(courses, lowIndex, highIndex)		
+}
+
+Class BinaryTree { // Defines tree structure
+	Private:
+Struct Node { 
+		Course course
+		Node* left
+		Node* right
+		Node* parent
+}
+
+Void treeInsert(course)
+		Void StoreInTree(tree, course)
+		Void PrintTreeCourse(tree, node, matchCourseNumber)
+		Void PrintTreeCourses(tree, node)
+	Public:
+		void ReadFile(course, file)
+}
+
+void ReadFile(Vector<Course> course, file) { // Function to read file, used by all three classes 
+	OPEN file 
+WHILE (not end of file) {
+	IF (line not empty) {
+		GET LINE into string
+		SEPARATE string by commas into substrings
+		IF (there’s two or more substrings/parameters) {
+			IF (substrings 3 and beyond == start of other line) { // Prerequisite exists
+				ADD new-line to end of string // new-line = new-line in vector
+				CONSTRUCT line/entire string into “course” struct
+				// course[0] = courseNumber
+// course[1] = name 
+// FOR (course[2] to end of line) {
+// 	course[i] = prerequisites
+// }
+
+WHILE (course is not empty) { // Gets every line
+					course temp
+				}
+			}
+		}
+	}
+}
+CLOSE file
+}
+
+Partition(courses, lowIndex, highIndex) { // Sorts vector alphanumerically, works with Quicksort()
+	Pivot = middle element
+	WHILE (done != true) {
+		WHILE (lowIndex < pivot) {
+			INCREMENT lowIndex
+		}
+		WHILE (pivot < highIndex) {
+			DECREMENT highIndex
+		}
+		IF (lowIndex >= highIndex) {
+			Done = true // Exits while loop 
+		}
+		ELSE {
+			SWAP lowIndex and highIndex
+			INCREMENT lowIndex
+			DECREMENT highIndex
+		}
+	}  
+	RETURN highIndex
+}
+
+Void Quicksort(courses, lowIndex, highIndex) { // Works with Partition(), sorts vectors
+	IF (already sorted) {
+		return
+	}
+	lowEndIndex = Partition(courses, lowIndex, highIndex)
+	Quicksort(courses, lowIndex, lowEndIndex)
+	Quicksort(courses, lowEndIndex + 1, highIndex)
+}
+
+void StoreInVector(vector<Course> courses) { // Function to store courses into VECTOR
+	WHILE (newCourse != NULL) { // Goes until end of file reached
+		newCourse = ReadFile(vector<Course> courses, file) // Reads one line from file
+// Each newCourse = one inner vector (one temp vector)
+		IF (newCourse [i] == new-line) { // Reached end of line 
+			START new line in vector (start next element)
+		} 
+		ADD newCourse to vector courses
+}
+	// This makes vector “courses” a vector of vectors.  Ex courses[0][1] = name of first course.
+}
+
+Void SortVector(courses, lowIndex, highIndex) { // Uses Quicksort() to sort VECTOR
+	Quicksort(courses, lowIndex, highIndex)
+}
+
+Void PrintVectorCourse(vector<Course> courses, matchCourseNumber) { // Prints a course in VECTOR 
+	FOR (all courses) { // Iterates through all courses
+		IF (course[i][0] == matchCourseNumber) { // Checks if any course has matching number
+			OUTPUT courseNumber // course[i][0]
+			OUTPUT courseName // course[i][1]
+			FOR (j starts at CourseName + 1, goes through end of line) {
+				OUTPUT j // Prints all prerequisites
+			}
+		}
+}
+}
+
+Void PrintVectorCourses(courses) { // Prints all courses in VECTOR
+	FOR (all courses) {
+		OUTPUT courseNumber
+		OUTPUT courseName
+		FOR (all prerequisites) {
+			OUTPUT prerequisites
+		}
+	}
+}
+
+Void hashInsert(course) { // Inserts course into HASH table
+	CREATE key 
+	ASSIGN node to key
+	ADD key/node pair into hash table
+}
+
+Void StoreInHashTable(hashTable, course) {  // Stores courses in HASH table, uses hashInsert(course)
+	FOR (all courses) {
+		Course course = ReadFile(vector<Course> courses, file)  // Reads one line from file
+// Separates course info into identifiers
+		course.courseNumber = course[0] 
+course.courseName = course[1]
+course.coursePrerequisites = course[3+] // Loop
+	}
+	hashTable->hashInsert(course) 
+}
+
+Void SortHashTable(hashTable) { // Sorts hash table alphanumerically 
+	CONVERT hashTable to vector
+	lowIndex = first node in vector
+	highIndex = last node in vector
+	Quicksort(vector, lowIndex, highIndex)
+	CONVERT vector back to hashTable // Now sorted
+}
+
+Void PrintHashCourse(hashTable, key) { // Prints certain course in HASH table
+	CREATE node “newNode”
+
+	WHILE (newNode->next != nullptr) { // While not end of file, iterates through each course
+		IF (newNode->key == key) {
+			OUTPUT courseNumber
+OUTPUT name
+FOR (j starts at courseName + 1, goes to end of line) {
+	OUTPUT j // prints all prerequisites
+} 
+		}
+	}
+}
+
+Void PrintHashCourses(hashTable) { // Prints all courses in hash table
+CREATE node “newNode”
+
+WHILE (newNode->next != nullptr) { // While not end of file, iterates through each course
+	OUTPUT courseNumber
+	OUTPUT courseName
+                             FOR (j starts at courseName + 1, goes to end of line) {
+OUTPUT j // prints all prerequisites
+} 
+}
+}
+
+Void treeInsert(course) { // Inserts courses into TREE
+	New node = node
+	STORE nodes in vector
+	RANDOMIZE vector // should lessen the height of the tree
+
+	 ADD vector to tree: // Find correct location in tree for it based on prerequisites 
+		currNode = root
+		WHILE (currNode is not null) {
+			IF (currNode is prerequisite of node) {
+				IF (currNode->left is null) {
+					currNode->left = course
+				}
+				ELSE { // left child is not null
+					currNode->right = course
+				}	
+			}
+		}
+}
+
+Void StoreInTree(tree, course) { // Stores courses into TREE, uses treeInsert(course)
+	FOR (all courses) {
+		Course course = ReadFile(vector<Course> courses, file)  // Reads one line from file
+// Separates course info into identifiers
+		course->courseNumber = course[0] 
+course->courseName = course[1]
+FOR (course[2] to end of line) { // All prerequisites
+course->coursePrerequisites = course[i] 
+}
+	}
+	tree->treeInsert(course) 
+}
+
+Void PrintTreeCourse(tree, node, matchCourseNumber) { // Prints certain node from TREE
+	Node = root of tree
+	IF (matchCourseNumber = node->courseNumber) {
+		OUTPUT node->courseNumber
+		OUTPUT node->courseName
+		FOR (all prerequisites) {
+			OUTPUT all prerequisites
+		}
+	}	
+	ELSE IF (matchCourseNumber < node->courseNumber) {
+		VISIT left child, repeat
+	}
+	ELSE IF (matchCourseNumber > node->courseNumber) {
+		VISIT right child, repeat
+	}
+}
+
+Void PrintTreeCourses(tree, node) { // Recursively prints all courses from TREE
+	IF (node is null) {
+		return
+	}
+	PrintTreeCourses(node->left)
+	OUTPUT courseNumber
+	OUTPUT courseName
+	FOR (all prerequisites) {
+		OUTPUT prerequisites
+	}
+	PrintTreeCourses(node->right)
+}
+
+Void Menu() { // Allows user to choose action, most likely put in main()
+	Int userChoice 
+	WHILE (userChoice != 9) {
+		IF (userChoise == 1) { // Load data structure
+			readFile(course, file)
+
+			STORE in structure
+// IF vector: StoreInVector()
+// IF hash table: StoreInHashTable()
+// IF tree: StoreInTree()
+		}
+		IF (userChoise == 2) { // Sort structure, print all courses
+			SORT data structure
+			// IF vector: Quicksort() 
+			// IF hash table: SortHashTable()
+			// IF tree: courses already sorted when put into tree
+
+			PRINT list
+			// IF vector: PrintVectorCourses() 
+			// IF hash table: PrintHashCourses()
+			// IF tree: PrintTreeCourses()
+		}
+		IF (userChoise == 3) { // Print one specific course
+			PRINT course
+			// IF vector: PrintVectorCourse()
+			// IF hash table: PrintHashCourse()
+			// IF tree: PrintTreeCourse()
+		}
+
+		IF (userChoise == 9) {
+			EXIT program
+		}
+	}
+}
