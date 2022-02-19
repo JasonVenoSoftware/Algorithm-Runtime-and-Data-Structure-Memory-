@@ -1,0 +1,20 @@
+Runtime Analysis
+
+Total line cost = number of lines, Total cost = runtime, Worst-case runtime = runtime for longest execution
+
+ReadFile(): Total line cost = 15, Total cost = 6N + 14, Worst-case runtime = O(n^2)
+Partition(): Total line cost: 13, Total cost: 3n + 11, Worst-Case runtime = O(n)
+Quicksort(): Total line cost = 5, Total cost =  O(n log n), Worst-case runtime = O(n^2) 
+StoreInVector(): Total line cost = 4, Total cost = O(n) + 4 = O(n), Worst-case runtime = O(n)
+SortVector(): Total line cost = 1, Total cost = O(n), Worst-case runtime = O(n^2)
+PrintVectorCourse(): Total line cost = 6, Total cost = 3n + 6, Worst-case runtime = O(n)
+PrintVectorCourses(): Total line cost = 5, Total cost = 2n + 5, Worst-case runtime = O(n)
+HashInsert(): Total line cost = 3, Total cost = 3, Worst-case runtime = O(1)
+StoreInHashTable(): Total line cost = 6, Total cost = n + n^2 + 3 + O(1), Worst-case runtime = O(n^2)
+SortHashTable(): Total line cost = 5, Total cost = O(n) + 4, Worst-case runtime = O(n^2)
+PrintHashCourse(): Total line cost = 7, Total cost = n^2 + n + 7, Worst-case runtime = O(n^2)
+PrintHashCourses(): Total line cost = 6, Total cost = n^2 + 6, Worst-case runtime = O(n^2)
+TreeInsert(): Total line cost = 10, Total cost = n + n + n + 5, Worst-case runtime = O(n) 
+StoreInTree(): Total line cost = 6, Total cost = n^2 + n^2 + n + 4 + O(n), Worst-case runtime = O(n^2)
+PrintTreeCourse(): Total line cost = 10, Total cost = O(log n) + O(log n) + n + 8, Worst-case runtime = O(n)
+PrintTreeCourses(): Total line cost = 8, Total cost = O(log n) + O(log n) + n + 4, Worst-case runtime = O(n)
